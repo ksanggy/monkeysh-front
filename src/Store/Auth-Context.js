@@ -13,7 +13,7 @@ export const AuthContextProvider = (props) => {
     //js trick for converting truthy/falsy values to true/false
     const userIsLoggedIn = !!token;
 
-    const loginHandler = () => {
+    const loginHandler = (token) => {
         setToken(token);
     }
 

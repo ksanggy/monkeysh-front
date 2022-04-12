@@ -15,17 +15,6 @@ export default function Login() {
   const navigate = useNavigate();
   const authCtx = useContext(AuthContext);
 
-
-  // const onEmailChange = (e)=>{
-  //   console.info('email : ', e.target.value);
-  //   setEmail(e.target.value);
-  // }
-
-  // const onPasswordHashChange = (e)=>{
-  //   console.info('email : ', e.target.value);
-  //   setPasswordHash(e.target.value);
-  // }
-
   const processLogin = ()=>{
     const enteredEmail = emailInputRef.current.value;
     const enteredPasswordHash = passwordHashInputRef.current.value;
@@ -48,20 +37,11 @@ export default function Login() {
       }
       return resp.json();
     }).then((data)=>{
-      console.log("data :: ", data);
+      authCtx.login(data.access_token);
+      console.log("access_token :: ", data.access_token);
+      console.log("refresh_token :: ", data.refresh_token);
+      return navigate(`/blogs`);
     });
-    //   return resp.json();
-    // }).then((data)=>{
-    //   console.log("#############");
-    //   console.log('200 OK', data);
-        
-    // }).catch((err)=>{
-    //   const error = err.json();
-    //   console.log("error : ", error);
-    //   console.log("error message : ", error.error);
-    //   console.log("path : ", error.path);
-    //   console.log("timestamp : ", error.timestamp);
-    // });
   }
 
   const handleError = (response) => {

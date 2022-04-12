@@ -17,11 +17,23 @@
   background-color: #0B0C10;
   color: #C5C6C7;
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 79px);
 }
 img{
-  height: 100vh;
+  height: calc(100vh - 79px);
   object-fit: contain;
   position: relative;
   z-index: 2;
+}
+
+/* Login Component */
+main.form-signin {
+  height: 100vh;
+}
+
+main > div.login {
+  margin: auto;
+  width: 50vw;
+  align-content: center;
+  justify-content: center;
 }

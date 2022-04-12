@@ -4,7 +4,8 @@ import myPhoto from '../Assets/Images/my-photo.png';
 
 function Home(props) {
     const fontColor = {color: "#FFC107"};
-    const borderLine = {border: "2px solid yellow", width:"100vw", bottom:"19%", position:"absolute", zIndex:"1"};
+    const borderLine = {border: "3px solid #FFC107", width:"100vw", bottom:"24%", position:"absolute", zIndex:"1"};
+    const armBorderLine = {border: "3px solid #FFC107", width:"100vw", bottom:"29%", position:"absolute", zIndex:"1"};
     return (
         <div className="home">
             <div className="container d-flex flex-row align-items-center justify-content-center">
@@ -14,6 +15,11 @@ function Home(props) {
                 </div>
             </div>
             <hr style={borderLine}/>
+            <hr style={borderLine}/>
+            <hr style={borderLine}/>
+            <hr style={armBorderLine}/>
+            <hr style={armBorderLine}/>
+            <hr style={armBorderLine}/>
         </div>
     );
 }
